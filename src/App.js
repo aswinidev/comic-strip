@@ -5,8 +5,7 @@ import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import ComicStrip from './components/ComicStrip';
 import { 
-  Dialog, 
-  Transition, 
+  Dialog,
   DialogActions, 
   DialogContent, 
   DialogContentText,

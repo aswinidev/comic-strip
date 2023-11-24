@@ -6,7 +6,7 @@ import { ThreeDots } from  'react-loader-spinner'
 
 export default function SearchBar (props) {
     const [focused, setFocused] = useState(false)
-    const [querying, setQuerying] = useState(false)
+    const querying = false
     const [query, setQuery] = useState('')
     const [status, setStatus] = useState("")
     const ref = useRef(null);
@@ -117,7 +117,7 @@ export default function SearchBar (props) {
                 radius="9"
                 color="#FFFFFF" 
                 ariaLabel="three-dots-loading"
-                visible={status == "Loading"}
+                visible={status === "Loading"}
             />
         </div>
     );

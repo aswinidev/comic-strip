@@ -1,17 +1,13 @@
-import { SelectActionTypes } from "@mui/base";
-import { FormControl, InputLabel, MenuItem, Select, Menu, Button } from "@mui/material";
+import { MenuItem, Menu, Button } from "@mui/material";
 import jsPDF from "jspdf";
 import React, { useEffect, useRef, useState } from "react";
 import { styled, alpha } from '@mui/material/styles';
-import EditIcon from '@mui/icons-material/Edit';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DownloadIcon from '@mui/icons-material/Download';
 import ImageIcon from '@mui/icons-material/Image';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import ShareIcon from '@mui/icons-material/Share';
 import Stack from '@mui/material/Stack';
-import Container from "@mui/material/Container";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from '@mui/material/Alert';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -68,14 +64,9 @@ const StyledMenu = styled((props) => (
     },
 }));
 
-const REGULAR = "https://images.unsplash.com/photo-1593959734793-6e92d102da1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MzE4NDR8MHwxfGFsbHx8fHx8fHx8fDE3MDA3MTQ3NDJ8&ixlib=rb-4.0.3&q=80&w=1080"
-const SMALL = "https://images.unsplash.com/photo-1593959734793-6e92d102da1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MzE4NDR8MHwxfGFsbHx8fHx8fHx8fDE3MDA3MTQ3NDJ8&ixlib=rb-4.0.3&q=80&w=400"
-
 export default function ComicStrip (props) {
     const { imageUrls } = props;
     const ref = useRef(null);
-    const [type, setType] = useState(0);
-    const [visible, setVisible] = useState(false);
     const [openAlert, setOpenAlert] = useState(false);
     
     function loadImage(url) {
@@ -96,31 +87,31 @@ export default function ComicStrip (props) {
         var img = await loadImage(imageUrls[0]);
         ctx.drawImage(img, 15, 15, 200, 300);
         
-        var img = await loadImage(imageUrls[1]);
+        img = await loadImage(imageUrls[1]);
         ctx.drawImage(img, 225, 15, 500, 300);
 
-        var img = await loadImage(imageUrls[2]);
+        img = await loadImage(imageUrls[2]);
         ctx.drawImage(img, 735, 15, 200, 300);
 
-        var img = await loadImage(imageUrls[3]);
+        img = await loadImage(imageUrls[3]);
         ctx.drawImage(img, 15, 325, 300, 400);
 
-        var img = await loadImage(imageUrls[4]);
+        img = await loadImage(imageUrls[4]);
         ctx.drawImage(img, 325, 325, 300, 195);
 
-        var img = await loadImage(imageUrls[5]);
+        img = await loadImage(imageUrls[5]);
         ctx.drawImage(img, 635, 325, 300, 195);
 
-        var img = await loadImage(imageUrls[6]);
+        img = await loadImage(imageUrls[6]);
         ctx.drawImage(img, 325, 530, 610, 195);
 
-        var img = await loadImage(imageUrls[7]);
+        img = await loadImage(imageUrls[7]);
         ctx.drawImage(img, 15, 735, 450, 195);
 
-        var img = await loadImage(imageUrls[8]);
+        img = await loadImage(imageUrls[8]);
         ctx.drawImage(img, 15, 940, 450, 195);
 
-        var img = await loadImage(imageUrls[9]);
+        img = await loadImage(imageUrls[9]);
         ctx.drawImage(img, 475, 735, 460, 400);
     }
 
